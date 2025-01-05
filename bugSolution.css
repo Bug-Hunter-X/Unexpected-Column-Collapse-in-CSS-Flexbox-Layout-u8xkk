@@ -1,0 +1,31 @@
+The solution is to remove `flex: 1` from the second column or adjust it to a value like `flex: 0 0 300px`. 
+
+```css
+.container {
+  display: flex;
+}
+
+.column {
+  /* Removed flex: 1 from here */
+}
+
+.column:nth-child(2) {
+  width: 300px;
+}
+```
+
+Alternatively, you can use a fixed width along with `flex-shrink` and `flex-grow` to allow it to grow or shrink properly without interfering with the flex: 1 property:
+
+```css
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.column:nth-child(2) {
+  flex: 0 1 300px; /* flex-grow: 0; flex-shrink: 1; width: 300px; */
+}
+```
