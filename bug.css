@@ -1,0 +1,15 @@
+The following CSS code snippet exhibits unexpected behavior in certain browsers. The intention is to create a two-column layout, but the second column collapses unexpectedly. 
+```css
+.container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+/* This should have a width */
+.column:nth-child(2) {
+  width: 300px;
+}
+```
